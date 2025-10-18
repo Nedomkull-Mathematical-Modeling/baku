@@ -29,9 +29,12 @@ class HighlighterRenderer(m.HtmlRenderer):
 def make_markdown_processor() -> Callable[[str], str]:
     return m.Markdown(HighlighterRenderer(),
         extensions=(
+            'autolink',
             'fenced-code',
             'footnotes',
             'math',
             'math-explicit',
             'quote',
-            'tables'))
+            'strikethrough',
+            'tables',
+            'underline'))
